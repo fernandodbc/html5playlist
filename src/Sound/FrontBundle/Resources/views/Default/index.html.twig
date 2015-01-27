@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Yoann Lelong : Media Playlist{% endblock %}
+
+{% block scripts %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ asset('bundles/soundfront/js/playlist.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href='http://fonts.googleapis.com/css?family=Norican' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('bundles/soundfront/css/playlist.css') }}" type="text/css" media="all" />
+{% endblock %}
+
+{% block body %}
+    <h1>
+        La mémoire d'une vies&nbsp;&nbsp;
+        <i id="refresh" class="fa fa-repeat fa-4" title="Je rafraichis ma mémoire"></i>
+    </h1>
+
+    <audio id="audio" >
+        <source id="audio-mp3" src="{{ audioUrl }}.mp3" type="audio/mp3" />
+        {# <source id="audio-ogg" src="{{ audioUrl }}.ogg" type="audio/ogg" /> #}
+        Merci de bien vouloir mettre à jour votre navigateur.
+    </audio>
+
+    <video id="video" name="media">
+        <source id="video-ogg" src="" type="audio/ogg">
+        <source id="video-mp4" src="" type="audio/mp4">
+        Merci de bien vouloir mettre à jour votre navigateur.
+    </video>
+
+    <ul id="video-playlist" style="display:none;" >
+        {% for videoUrl in videoUrls %}
+            <li data-url="{{ videoUrl }}"></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            playlist();
+            $('#refresh').on('click', function(){
+                location.reload();
+            });
+        });
+    </script>
+{% endblock %}

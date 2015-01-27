@@ -1,0 +1,17 @@
+body {
+	background-color: rgb(236, 240, 241);
+}
+
+video#video {
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100;
+    background-size: cover;
+}
+
+#lastCreation {
+	/*display: none;*/
+	background-color: rgb(44, 62, 80);
+	color:rgb(236, 240, 241);
+	margin:10px;
+}

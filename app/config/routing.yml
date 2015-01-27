@@ -1,0 +1,5 @@
+sound_front:
+    resource: "@SoundFrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
