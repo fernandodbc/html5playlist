@@ -1,6 +1,9 @@
 # Cache and logs (Symfony2)
+<<<<<<< HEAD
 /web/sons/*
 /web/videos/*
+=======
+>>>>>>> a92ba6a378e42f5c07b170fbb7e9042d48f91b90
 /app/cache/*
 /app/logs/*
 !app/cache/.gitkeep
