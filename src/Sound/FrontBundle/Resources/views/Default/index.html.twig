@@ -32,8 +32,8 @@
     </video>
 
     <ul id="video-playlist" style="display:none;" >
-        {% for videoUrl in videoUrls %}
-            <li data-url="{{ videoUrl }}"></li>
+        {% for video in videos %}
+            <li data-url="{{ video.path }}"></li>
         {% endfor %}
     </ul>
 {% endblock %}

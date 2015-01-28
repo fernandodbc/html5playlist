@@ -29,14 +29,12 @@ class DefaultController extends Controller
         // sorting randomly the videos 
         shuffle($videos);
         
-        $videoUrls = array();
+        $videosArray = array();
         $videosId = array();
-        $videosNames = array();
         foreach ($videos as $video) {
             if ($video->getDuration() <= $audioDuration) {
-                $videoUrls[] = $video->getPath();
+                $videosArray[] = $video;
                 $videosId[] = $video->getId();
-                $videosNames[] = $video->getName();
                 $audioDuration -= $video->getDuration();
             } else {
                 break;
@@ -53,9 +51,8 @@ class DefaultController extends Controller
 
         return array(
             'audioUrl'   => $audio->getPath(),
-            'videoUrls'  => $videoUrls,
-            'audioName'  => $audio->getName(),
-            'videoNames' => $videosNames
+            'videos'     => $videosArray,
+            'audioName'  => $audio->getName()
         );
     }
 }
