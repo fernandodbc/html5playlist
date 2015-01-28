@@ -51,8 +51,7 @@ class DefaultController extends Controller
 
         return array(
             'audioUrl'   => $audio->getPath(),
-            'videos'     => $videosArray,
-            'audioName'  => $audio->getName()
+            'videos'     => $videosArray
         );
     }
 }
