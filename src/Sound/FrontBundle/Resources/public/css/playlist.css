@@ -1,17 +1,15 @@
 body {
-	background-color: rgb(236, 240, 241);
+    background-color: black;
+    text-align: center;
+    color:rgb(236, 240, 241);
+    font-family: 'Norican', cursive;
 }
 
 video#video {
-    position: fixed; right: 0; bottom: 0;
-    min-width: 100%; min-height: 100%;
-    width: auto; height: auto; z-index: -100;
-    background-size: cover;
+    width: 60%; height: 60%; z-index: -100;
 }
 
-#lastCreation {
-	/*display: none;*/
-	background-color: rgb(44, 62, 80);
-	color:rgb(236, 240, 241);
-	margin:10px;
+#refresh {
+    font-size:1em;
+    cursor: pointer;
 }

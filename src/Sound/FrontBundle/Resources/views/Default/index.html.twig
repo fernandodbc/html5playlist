@@ -25,11 +25,14 @@
         Merci de bien vouloir mettre à jour votre navigateur.
     </audio>
 
-    <video id="video" name="media">
-        <source id="video-ogg" src="" type="audio/ogg">
-        <source id="video-mp4" src="" type="audio/mp4">
-        Merci de bien vouloir mettre à jour votre navigateur.
-    </video>
+    {% for video in videos %}
+        <video style="display:none;">
+            <source class="video-ogg" src="{{ video.path }}.ogg" type="audio/ogg">
+            <source class="video-mp4" src="{{ video.path }}.mp4" type="audio/mp4">
+            <source class="video-webm" src="{{ video.path }}.webm" type="audio/webm">
+            Merci de bien vouloir mettre à jour votre navigateur.
+        </video>
+    {% endfor %}
 
     <ul id="video-playlist" style="display:none;" >
         {% for video in videos %}
@@ -41,7 +44,6 @@
 {% block javascripts %}
     <script type="text/javascript">
         $(document).ready(function() {
-            playlist();
             $('#refresh').on('click', function(){
                 location.reload();
             });
