@@ -5,14 +5,11 @@ var ylelong = {};
 var videoPlaylist = [];
 var videoIndex = 0;
 var video = [];
+var audio = document.getElementById("audio");
 
 $('#video-playlist li').each(function(index) {
     videoPlaylist.push($(this).data('url'));
 });
-
-var audio = document.getElementById("audio");
-audio.play();
-
 
 ylelong.videoPlayNext = function () {
 
@@ -23,10 +20,6 @@ ylelong.videoPlayNext = function () {
             video[videoIndex].play();
             $(video[videoIndex]).show();
         }
-    };
-
-    video[videoIndex].onpause = function(e) {
-        audio.pause();
     };
 
     video[videoIndex].onplay = function(e) {
@@ -51,10 +44,6 @@ ylelong.videoPlaylist = function () {
             video[videoIndex].play();
             $(video[videoIndex]).show();
         }
-    };
-
-    video[videoIndex].onpause = function(e) {
-        audio.pause();
     };
 
     video[videoIndex].onplay = function(e) {
